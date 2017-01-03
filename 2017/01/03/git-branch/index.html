@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>html代码固定，实现文字不居中，图片居中 | 不知不觉又一秋</title>
+  <title>git本地创建远端分支 | 不知不觉又一秋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css小技巧笔记，html代码固定，实现文字不居中，图片居中">
+  <meta name="description" content="在公司解决问题时，需要创建远端分支，但是每次都要在内源网站上（类似github）点击创建分支，然后再git fetch，git checkout。因为公司代码太多，网站很卡，很容易让人焦虑。然后就在网上找了找本地创建远端分支的技巧，比较简单，代码如下。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="html代码固定，实现文字不居中，图片居中">
-<meta property="og:url" content="http://yoursite.com/2017/01/02/css-img-center/index.html">
+<meta property="og:title" content="git本地创建远端分支">
+<meta property="og:url" content="http://yoursite.com/2017/01/03/git-branch/index.html">
 <meta property="og:site_name" content="不知不觉又一秋">
-<meta property="og:description" content="css小技巧笔记，html代码固定，实现文字不居中，图片居中">
-<meta property="og:image" content="http://yoursite.com/img/tiancai.jpg">
-<meta property="og:updated_time" content="2017-01-02T17:47:21.721Z">
+<meta property="og:description" content="在公司解决问题时，需要创建远端分支，但是每次都要在内源网站上（类似github）点击创建分支，然后再git fetch，git checkout。因为公司代码太多，网站很卡，很容易让人焦虑。然后就在网上找了找本地创建远端分支的技巧，比较简单，代码如下。">
+<meta property="og:updated_time" content="2017-01-03T05:11:39.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="html代码固定，实现文字不居中，图片居中">
-<meta name="twitter:description" content="css小技巧笔记，html代码固定，实现文字不居中，图片居中">
-<meta name="twitter:image" content="http://yoursite.com/img/tiancai.jpg">
+<meta name="twitter:title" content="git本地创建远端分支">
+<meta name="twitter:description" content="在公司解决问题时，需要创建远端分支，但是每次都要在内源网站上（类似github）点击创建分支，然后再git fetch，git checkout。因为公司代码太多，网站很卡，很容易让人焦虑。然后就在网上找了找本地创建远端分支的技巧，比较简单，代码如下。">
   
     <link rel="alternative" href="/atom.xml" title="不知不觉又一秋" type="application/atom+xml">
   
@@ -159,45 +157,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-css-img-center" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git-branch" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      html代码固定，实现文字不居中，图片居中
+      git本地创建远端分支
     </h1>
   
 
         
-        <a href="/2017/01/02/css-img-center/" class="archive-article-date">
-  	<time datetime="2017-01-02T07:24:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
+        <a href="/2017/01/03/git-branch/" class="archive-article-date">
+  	<time datetime="2017-01-03T05:02:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>css小技巧笔记，html代码固定，实现文字不居中，图片居中<br><a id="more"></a></p>
+        <p>在公司解决问题时，需要创建远端分支，但是每次都要在内源网站上（类似github）点击创建分支，然后再git fetch，git checkout。因为公司代码太多，网站很卡，很容易让人焦虑。然后就在网上找了找本地创建远端分支的技巧，比较简单，代码如下。<br><a id="more"></a></p>
 <blockquote>
-<p>html代码</p>
+<p>创建本地分支</p>
 </blockquote>
-<pre><code>&lt;div class=&quot;article&quot;&gt;
-    &lt;p&gt;文字不要居中，下面图片要居中&lt;/p&gt;
-    &lt;p&gt;&lt;img src=&quot;/img/tiancai.jpg&quot;&gt;&lt;/p&gt;
-&lt;/div&gt;
+<pre><code>--切到master分支
+$git checkout master
+--创建本地分支
+$git branch develop
 </code></pre><blockquote>
-<p>css代码</p>
+<p>创建远端分支</p>
 </blockquote>
-<h3 id="img为内联元素，因此需要改变display方式为bolck"><a href="#img为内联元素，因此需要改变display方式为bolck" class="headerlink" title="img为内联元素，因此需要改变display方式为bolck"></a>img为内联元素，因此需要改变display方式为bolck</h3><pre><code>.article&gt;p&gt;img{
-    display:block;
-    margin:0 auto;
-}
-</code></pre><blockquote>
-<p>效果</p>
-</blockquote>
-<div class="article" style="width:100%"><br>    <p>文字不要居中，下面图片要居中</p><br>    <p><img src="/img/tiancai.jpg" style="display:block;margin:0 auto;"></p><br></div>
+<pre><code>$git push origin develop
+</code></pre>
       
 
       
@@ -231,7 +223,7 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">css</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">GIT</a>
         </li>
       
 		</ul>
@@ -287,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/01/02/css-img-center/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/01/03/git-branch/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -301,18 +293,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/03/git-branch/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          git本地创建远端分支
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/02/2016-1-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2017 第一次写博客</div>
+    <a href="/2017/01/02/css-img-center/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">html代码固定，实现文字不居中，图片居中</div>
       <i class="icon-circle-right"></i>
     </a>
   
