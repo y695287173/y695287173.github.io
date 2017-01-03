@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>html代码固定，实现文字不居中，图片居中 | 不知不觉又一秋</title>
+  <title>markdown语言实现段首空格的显示 | 不知不觉又一秋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css小技巧笔记，html代码固定，实现文字不居中，图片居中">
+  <meta name="description" content="原则上 markdown语言并不负责实现段首缩进，我们也推荐用CSS完成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="html代码固定，实现文字不居中，图片居中">
-<meta property="og:url" content="http://yoursite.com/2017/01/02/css-img-center/index.html">
+<meta property="og:title" content="markdown语言实现段首空格的显示">
+<meta property="og:url" content="http://yoursite.com/2017/01/03/markdown-indent/index.html">
 <meta property="og:site_name" content="不知不觉又一秋">
-<meta property="og:description" content="css小技巧笔记，html代码固定，实现文字不居中，图片居中">
-<meta property="og:image" content="http://yoursite.com/img/tiancai.jpg">
-<meta property="og:updated_time" content="2017-01-02T17:47:21.721Z">
+<meta property="og:description" content="原则上 markdown语言并不负责实现段首缩进，我们也推荐用CSS完成">
+<meta property="og:updated_time" content="2017-01-03T15:27:21.526Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="html代码固定，实现文字不居中，图片居中">
-<meta name="twitter:description" content="css小技巧笔记，html代码固定，实现文字不居中，图片居中">
-<meta name="twitter:image" content="http://yoursite.com/img/tiancai.jpg">
+<meta name="twitter:title" content="markdown语言实现段首空格的显示">
+<meta name="twitter:description" content="原则上 markdown语言并不负责实现段首缩进，我们也推荐用CSS完成">
   
     <link rel="alternative" href="/atom.xml" title="不知不觉又一秋" type="application/atom+xml">
   
@@ -157,45 +155,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-css-img-center" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-markdown-indent" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      html代码固定，实现文字不居中，图片居中
+      markdown语言实现段首空格的显示
     </h1>
   
 
         
-        <a href="/2017/01/02/css-img-center/" class="archive-article-date">
-  	<time datetime="2017-01-02T07:24:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
+        <a href="/2017/01/03/markdown-indent/" class="archive-article-date">
+  	<time datetime="2017-01-03T15:19:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>css小技巧笔记，html代码固定，实现文字不居中，图片居中<br><a id="more"></a></p>
-<blockquote>
-<p>html代码</p>
-</blockquote>
-<pre><code>&lt;div class=&quot;article&quot;&gt;
-    &lt;p&gt;文字不要居中，下面图片要居中&lt;/p&gt;
-    &lt;p&gt;&lt;img src=&quot;/img/tiancai.jpg&quot;&gt;&lt;/p&gt;
-&lt;/div&gt;
-</code></pre><blockquote>
-<p>css代码</p>
-</blockquote>
-<h3 id="img为内联元素，因此需要改变display方式为bolck"><a href="#img为内联元素，因此需要改变display方式为bolck" class="headerlink" title="img为内联元素，因此需要改变display方式为bolck"></a>img为内联元素，因此需要改变display方式为bolck</h3><pre><code>.article&gt;p&gt;img{
-    display:block;
-    margin:0 auto;
+        <p>原则上 markdown语言并不负责实现段首缩进，我们也推荐用CSS完成</p>
+<a id="more"></a>
+<pre><code>p{
+    text-indent:2em;
 }
-</code></pre><blockquote>
-<p>效果</p>
-</blockquote>
-<div class="article" style="width:100%"><br>    <p>文字不要居中，下面图片要居中</p><br>    <p><img src="/img/tiancai.jpg" style="display:block;margin:0 auto;"></p><br></div>
+</code></pre><p>特殊情况下，有如下方式可以实现</p>
+<p>手动输入空格，<code>&amp;nbsp;</code>，不推荐，效果如下：<br>&nbsp;&nbsp;缩进后的文字</p>
+<p>推荐第二种圆角空格，切换到全角模式下（一般的中文输入法都是按 shift + space）输入两个空格就行了。这个相对 <code>&amp;nbsp;</code> 来说稍微干净一点（markdown文档的结构直观），而且宽度是整整两个汉字，很整齐。<br>　　缩进后的文字</p>
+
       
 
       
@@ -229,7 +217,7 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">css</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">markdown</a>
         </li>
       
 		</ul>
@@ -285,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/01/02/css-img-center/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/01/03/markdown-indent/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -299,18 +287,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/03/git-branch/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/03/markdown-guide/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          git本地创建远端分支
+          markdown 入门语法总结
         
       </div>
     </a>
   
   
-    <a href="/2017/01/02/2016-1-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2017 第一次写博客</div>
+    <a href="/2017/01/03/git-clean/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git常用命令--git clean</div>
       <i class="icon-circle-right"></i>
     </a>
   
