@@ -6,26 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://y695287173.github.io">
-  <title>2017 第一次写博客 | 不知不觉又一秋</title>
+  <title>《javaScript高级程序设计》第11章 DOM拓展总结 | 不知不觉又一秋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2016就这样过去了，这已经是我来到这个世界的第22个年头
-现在竟然也已经到了地铁上让个座都要被喊谢谢叔叔的年纪，小时候也常常期盼着长大之后为所欲为
-现在想想。。。哈哈">
+  <meta name="description" content="对 DOM 的两个主要的扩展是 Selectors API（选择符 API）和 HTML5。这两个扩展都源自开发社区，而将某些常见做法及 API 标准化一直是众望所归。此外，还有一个不那么引人瞩目的 Element Traversal（元素遍历）规范，为 DOM 添加了一些属性。虽然前述两个主要规范（特别是 HTML5）已经涵盖了大量的 DOM 扩展，但专有扩展依然存在。本章也会介绍专有的 DOM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017 第一次写博客">
-<meta property="og:url" content="https://y695287173.github.io/2017/01/02/2016-1-2/index.html">
+<meta property="og:title" content="《javaScript高级程序设计》第11章 DOM拓展总结">
+<meta property="og:url" content="https://y695287173.github.io/2017/02/14/javascriptnote11/index.html">
 <meta property="og:site_name" content="不知不觉又一秋">
-<meta property="og:description" content="2016就这样过去了，这已经是我来到这个世界的第22个年头
-现在竟然也已经到了地铁上让个座都要被喊谢谢叔叔的年纪，小时候也常常期盼着长大之后为所欲为
-现在想想。。。哈哈">
-<meta property="og:image" content="https://y695287173.github.io/img/tiancai.jpg">
-<meta property="og:updated_time" content="2017-01-02T17:01:01.363Z">
+<meta property="og:description" content="对 DOM 的两个主要的扩展是 Selectors API（选择符 API）和 HTML5。这两个扩展都源自开发社区，而将某些常见做法及 API 标准化一直是众望所归。此外，还有一个不那么引人瞩目的 Element Traversal（元素遍历）规范，为 DOM 添加了一些属性。虽然前述两个主要规范（特别是 HTML5）已经涵盖了大量的 DOM 扩展，但专有扩展依然存在。本章也会介绍专有的 DOM">
+<meta property="og:updated_time" content="2017-02-14T06:00:11.720Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017 第一次写博客">
-<meta name="twitter:description" content="2016就这样过去了，这已经是我来到这个世界的第22个年头
-现在竟然也已经到了地铁上让个座都要被喊谢谢叔叔的年纪，小时候也常常期盼着长大之后为所欲为
-现在想想。。。哈哈">
-<meta name="twitter:image" content="https://y695287173.github.io/img/tiancai.jpg">
+<meta name="twitter:title" content="《javaScript高级程序设计》第11章 DOM拓展总结">
+<meta name="twitter:description" content="对 DOM 的两个主要的扩展是 Selectors API（选择符 API）和 HTML5。这两个扩展都源自开发社区，而将某些常见做法及 API 标准化一直是众望所归。此外，还有一个不那么引人瞩目的 Element Traversal（元素遍历）规范，为 DOM 添加了一些属性。虽然前述两个主要规范（特别是 HTML5）已经涵盖了大量的 DOM 扩展，但专有扩展依然存在。本章也会介绍专有的 DOM">
   
     <link rel="alternative" href="/atom.xml" title="不知不觉又一秋" type="application/atom+xml">
   
@@ -167,42 +159,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2016-1-2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-javascriptnote11" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      2017 第一次写博客
+      《javaScript高级程序设计》第11章 DOM拓展总结
     </h1>
   
 
         
-        <a href="/2017/01/02/2016-1-2/" class="archive-article-date">
-  	<time datetime="2017-01-02T06:05:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
+        <a href="/2017/02/14/javascriptnote11/" class="archive-article-date">
+  	<time datetime="2017-02-14T05:38:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/img/tiancai.jpg" alt="tiancai"></p>
-<p>2016就这样过去了，这已经是我来到这个世界的第22个年头</p>
-<p>现在竟然也已经到了地铁上让个座都要被喊谢谢叔叔的年纪，小时候也常常期盼着长大之后为所欲为</p>
-<p>现在想想。。。哈哈<br><a id="more"></a></p>
-<p>一切都没什么波澜</p>
-<p>2016就这么毕业了，工作了，女朋友也好的很</p>
-<p>但是刚毕业了半年再听一听郝云的“<a href="https://www.baidu.com/s?wd=%E6%B4%BB%E7%9D%80&amp;rsv_spt=1&amp;rsv_iqid=0xb9019306000072c5&amp;issp=1&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rqlang=cn&amp;tn=baiduhome_pg&amp;rsv_enter=0&amp;oq=%E6%B4%BB%E7%9D%80&amp;rsv_t=2df0N0ARqAdvSNi6fyXuKyiVcFWamoBHW4CEntMHmVoMuacQwAuBK6YuOJOMcTiF1FOT&amp;rsv_pq=da655f090001066d" target="_blank" rel="external">活着</a>”,就开始共鸣了</p>
-<p>也不知道是自己成长的太快了，还是变得矫情了</p>
+        <p>对 DOM 的两个主要的扩展是 Selectors API（选择符 API）和 HTML5。这两个扩展都源自开发社区，而将某些常见做法及 API 标准化一直是众望所归。此外，还有一个不那么引人瞩目的 Element Traversal（元素遍历）规范，为 DOM 添加了一些属性。虽然前述两个主要规范（特别是 HTML5）已经涵盖了大量的 DOM 扩展，但专有扩展依然存在。本章也会介绍专有的 DOM 扩展。<br><a id="more"></a></p>
+<h1 id="11-1-选择符-API"><a href="#11-1-选择符-API" class="headerlink" title="11.1 选择符 API"></a>11.1 选择符 API</h1><p>众多 JavaScript 库中最常用的一项功能，就是根据 CSS 选择符选择与某个模式匹配的 DOM 元素。实际上，jQuery（www.jquery.com）的核心就是通过 CSS 选择符查询 DOM 文档取得元素的引用，从而抛开了 getElementById() 和 getElementsByTagName() 。</p>
+<p>Selectors API Level 1的核心是两个方法： <em>querySelector()</em> 和 <em>querySelectorAll()</em> 。在兼容的浏览器中，可以通过 Document 及 Element 类型的实例调用它们。目前已完全支持 Selectors API Level 1的浏览器有 IE 8+、Firefox 3.5+、Safari 3.1+、Chrome和 Opera 10+。</p>
+<h3 id="11-1-1-querySelector-方法"><a href="#11-1-1-querySelector-方法" class="headerlink" title="11.1.1  querySelector() 方法"></a>11.1.1  querySelector() 方法</h3><p>querySelector() 方法接收一个 CSS 选择符，返回与该模式匹配的第一个元素，如果没有找到匹配的元素，返回 null 。请看下面的例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//取得 body 元素</div><div class="line">var body = document.querySelector(&quot;body&quot;);</div><div class="line">//取得 ID 为&quot;myDiv&quot;的元素</div><div class="line">var myDiv = document.querySelector(&quot;#myDiv&quot;);</div><div class="line">//取得类为&quot;selected&quot;的第一个元素</div><div class="line">var selected = document.querySelector(&quot;.selected&quot;);</div><div class="line">//取得类为&quot;button&quot;的第一个图像元素</div><div class="line">var img = document.body.querySelector(&quot;img.button&quot;);</div></pre></td></tr></table></figure>
+<p>如果传入了不被支持的选择符， querySelector()<br>会抛出错误。</p>
+<h3 id="11-1-1-querySelectorAll-方法"><a href="#11-1-1-querySelectorAll-方法" class="headerlink" title="11.1.1  querySelectorAll() 方法"></a>11.1.1  querySelectorAll() 方法</h3><p>与querySelector()基本相同，差异为返回全部元素，如下例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//取得某&lt;div&gt;中的所有&lt;em&gt;元素（类似于 getElementsByTagName(&quot;em&quot;)）</div><div class="line">var ems = document.getElementById(&quot;myDiv&quot;).querySelectorAll(&quot;em&quot;);</div><div class="line">//取得类为&quot;selected&quot;的所有元素</div><div class="line">var selecteds = document.querySelectorAll(&quot;.selected&quot;);</div><div class="line">//取得所有&lt;p&gt;元素中的所有&lt;strong&gt;元素</div><div class="line">var strongs = document.querySelectorAll(&quot;p strong&quot;);</div><div class="line">要取得返回的 NodeList 中的每一个元素，可以使用 item() 方法，也可以使用方括号语法，比如：</div><div class="line">var i, len, strong;</div><div class="line">for (i=0, len=strongs.length; i &lt; len; i++)&#123;</div><div class="line">strong = strongs[i]; //或者 strongs.item(i)</div><div class="line">strong.className = &quot;important&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="11-1-3-matchesSelector-方法"><a href="#11-1-3-matchesSelector-方法" class="headerlink" title="11.1.3  matchesSelector() 方法"></a>11.1.3  matchesSelector() 方法</h3><p>Selectors API Level 2 规范为 Element 类型新增了一个方法 matchesSelector() 。这个方法接收一个参数，即 CSS 选择符，如果调用元素与该选择符匹配，返回 true ；否则，返回 false 。看例子。</p>
+<p>截至 2011 年年中，还没有浏览器支持 matchesSelector() 方法；不过，也有一些实验性的实现。IE 9+通过 msMatchesSelector() 支持该方法，Firefox 3.6+通过 mozMatchesSelector() 支持该方法，Safari 5+和 Chrome 通过 webkitMatchesSelector() 支持该方法。因此，如果你想使用这个方法，最<br>好是编写一个包装函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function matchesSelector(element, selector)&#123;</div><div class="line">if (element.matchesSelector)&#123;</div><div class="line">return element.matchesSelector(selector);</div><div class="line">&#125; else if (element.msMatchesSelector)&#123;</div><div class="line">return element.msMatchesSelector(selector);</div><div class="line">&#125; else if (element.mozMatchesSelector)&#123;</div><div class="line">return element.mozMatchesSelector(selector);</div><div class="line">&#125; else if (element.webkitMatchesSelector)&#123;</div><div class="line">return element.webkitMatchesSelector(selector);</div><div class="line">&#125; else &#123;</div><div class="line">throw new Error(&quot;Not supported.&quot;);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">if (matchesSelector(document.body, &quot;body.page1&quot;))&#123;</div><div class="line">//执行操作</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="11-2-元素遍历"><a href="#11-2-元素遍历" class="headerlink" title="11.2 元素遍历"></a>11.2 元素遍历</h1><p>对于元素间的空格，IE9及之前版本不会返回文本节点，而其他所有浏览器都会返回文本节点。这样，就导致了在使用 childNodes 和 firstChild 等属性时的行为不一致。为了弥补这一差异，而同时又保持 DOM规范不变，Element Traversal规范（www.w3.org/TR/ElementTraversal/）新定义了一组属性。<br>Element Traversal API 为 DOM 元素添加了以下 5 个属性。</p>
 <blockquote>
-<p>慌慌张张 匆匆忙忙 为何生活总是这样<br>难道说 我的理想<br>就是这样渡过一生的时光<br>不卑不亢 不慌不忙<br>也许生活应该这样<br>难道说 60岁后再去寻找搜索<br>我想要的自由</p>
+<p>childElementCount ：返回子元素（不包括文本节点和注释）的个数。<br>firstElementChild ：指向第一个子元素； firstChild 的元素版。<br>lastElementChild ：指向最后一个子元素； lastChild 的元素版。<br>previousElementSibling ：指向前一个同辈元素； previousSibling 的元素版。<br>nextElementSibling ：指向后一个同辈元素； nextSibling 的元素版。</p>
 </blockquote>
-<p>有时跟人谈心，我说我很迷茫，看不见自己的未来是什么样的</p>
-<p>他们总会说其实大家都是这样的，工作嘛</p>
-<p>可是我真的不想这样度过一辈子，我怕我会后悔</p>
-<p>总之，不断学习总是没有坏处的</p>
-<p>我就付出比别人多一倍的努力又能如何？</p>
+<p>如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var i,</div><div class="line">len,</div><div class="line">child = element.firstChild;</div><div class="line">while(child != element.lastChild)&#123;</div><div class="line">if (child.nodeType == 1)&#123; //检查是不是元素</div><div class="line">processChild(child);</div><div class="line">&#125;</div><div class="line">child = child.nextSibling;</div><div class="line">&#125;</div><div class="line">而使用 Element Traversal 新增的元素，代码会更简洁。</div><div class="line">var i,</div><div class="line">len,</div><div class="line">child = element.firstElementChild;</div><div class="line">while(child != element.lastElementChild)&#123;</div><div class="line">processChild(child); //已知其是元素</div><div class="line">child = child.nextElementSibling;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>支持 Element Traversal 规范的浏览器有 IE 9+、Firefox 3.5+、Safari 4+、Chrome 和 Opera 10+。</p>
 
       
 
@@ -237,7 +231,7 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">生活</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">javaScript</a>
         </li>
       
 		</ul>
@@ -293,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://y695287173.github.io/2017/01/02/2016-1-2/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://y695287173.github.io/2017/02/14/javascriptnote11/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -307,15 +301,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/02/css-img-center/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          html代码固定，实现文字不居中，图片居中
-        
-      </div>
-    </a>
   
+    <a href="/2017/02/13/pointer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css下让input按钮指上变小手</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
