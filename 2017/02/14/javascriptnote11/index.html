@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="不知不觉又一秋">
 <meta property="og:description" content="摘录总结自《javaScript高级程序设计》
 对 DOM 的两个主要的扩展是 Selectors API（选择符 API）和 HTML5。这两个扩展都源自开发社区，而将某些常见做法及 API 标准化一直是众望所归。此外，还有一个不那么引人瞩目的 Element Traversal（元素遍历）规范，为 DOM 添加了一些属性。虽然前述两个主要规范（特别是 HTML5）已经涵盖了大量的 DOM 扩展">
-<meta property="og:updated_time" content="2017-02-14T15:32:03.278Z">
+<meta property="og:updated_time" content="2017-02-15T04:57:24.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《javaScript高级程序设计》第11章 DOM拓展总结">
 <meta name="twitter:description" content="摘录总结自《javaScript高级程序设计》
@@ -231,13 +231,10 @@
 <p>在这个属性得到广泛支持之前，要实现这样一个指示器，必须借助 onload 事件处理程序设置一<br>个标签，表明文档已经加载完毕。基本用法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.readyState == <span class="string">"complete"</span>)&#123;</div><div class="line">	<span class="comment">//执行操作</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>支持 readyState 属性的浏览器有 IE4+、Firefox 3.6+、Safari、Chrome和 Opera 9+。</p>
-<h4 id="1-readyState-属性-1"><a href="#1-readyState-属性-1" class="headerlink" title="1.  readyState 属性"></a>1.  readyState 属性</h4><ol>
-<li>兼容模式</li>
-</ol>
-<p>就像下面例子中所展示的那样，在标准模式下， document.compatMode 的值等于 “CSS1Compat” ，而在混杂模式下， document.compatMode 的值等于 “BackCompat” 。</p>
+<h4 id="2-兼容模式"><a href="#2-兼容模式" class="headerlink" title="2. 兼容模式"></a>2. 兼容模式</h4><p>就像下面例子中所展示的那样，在标准模式下， document.compatMode 的值等于 “CSS1Compat” ，而在混杂模式下， document.compatMode 的值等于 “BackCompat” 。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.compatMode == <span class="string">"CSS1Compat"</span>)&#123;</div><div class="line">	alert(<span class="string">"Standards mode"</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	alert(<span class="string">"Quirks mode"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>后来，陆续实现这个属性的浏览器有 Firefox、Safari 3.1+、Opera 和 Chrome。最终，HTML5 也把这个属性纳入标准，对其实现做出了明确规定。</p>
-<h4 id="3-head-属性"><a href="#3-head-属性" class="headerlink" title="3.  head 属性"></a>3.  head 属性</h4><p>作为对 document.body 引用文档的 <body> 元素的补充，HTML5 新增了 document.head 属性，引用文档的 <head> 元素。要引用文档的 <head> 元素，可以结合使用这个属性和另一种后备方法。</head></head></body></p>
+<h4 id="3-head-属性"><a href="#3-head-属性" class="headerlink" title="3.  head 属性"></a>3.  head 属性</h4><p>作为对 document.body 引用文档的 <body> 元素的补充，HTML5 新增了 document.head 属性，引用文档的 head 元素。要引用文档的 <head> 元素，可以结合使用这个属性和另一种后备方法。</head></body></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> head = <span class="built_in">document</span>.head || <span class="built_in">document</span>.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>];</div></pre></td></tr></table></figure>
 <p>如果可用，就使用 document.head ，否则仍然使用 getElementsByTagName() 方法。<br>实现 document.head 属性的浏览器包括 Chrome 和 Safari 5。</p>
 <h4 id="11-3-4-字符集属性"><a href="#11-3-4-字符集属性" class="headerlink" title="11.3.4 字符集属性"></a>11.3.4 字符集属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alert(<span class="built_in">document</span>.charset); <span class="comment">//"UTF-16"</span></div><div class="line"><span class="built_in">document</span>.charset = <span class="string">"UTF-8"</span>;</div></pre></td></tr></table></figure>
@@ -352,6 +349,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/02/16/font-order/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          font 属性简写
+        
+      </div>
+    </a>
   
   
     <a href="/2017/02/13/pointer/" id="article-nav-older" class="article-nav-link-wrap">
