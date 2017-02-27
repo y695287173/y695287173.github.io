@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://y695287173.github.io">
-  <title>Archives: 2017/2 | 不知不觉又一秋</title>
+  <title>清除浮动的几种方法 | 不知不觉又一秋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="严云良的博客。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="不知不觉又一秋">
-<meta property="og:url" content="https://y695287173.github.io/archives/2017/02/index.html">
+  <meta name="description" content="在CSS布局中，浮动是一个常用的属性，但在子元素设置float属性时height超过父元素，在父元素未设置高度或高度小于子元素时，会出现子元素溢出父元素，从而使父元素高度出现塌陷的情况。而为了防止子元素溢出到父元素包围以外的css处理，就被称为清除浮动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="清除浮动的几种方法">
+<meta property="og:url" content="https://y695287173.github.io/2017/02/27/float-clear/index.html">
 <meta property="og:site_name" content="不知不觉又一秋">
-<meta property="og:description" content="严云良的博客。">
+<meta property="og:description" content="在CSS布局中，浮动是一个常用的属性，但在子元素设置float属性时height超过父元素，在父元素未设置高度或高度小于子元素时，会出现子元素溢出父元素，从而使父元素高度出现塌陷的情况。而为了防止子元素溢出到父元素包围以外的css处理，就被称为清除浮动">
+<meta property="og:image" content="https://y695287173.github.io/img/css-float-1.jpg">
+<meta property="og:updated_time" content="2017-02-27T15:49:39.666Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不知不觉又一秋">
-<meta name="twitter:description" content="严云良的博客。">
+<meta name="twitter:title" content="清除浮动的几种方法">
+<meta name="twitter:description" content="在CSS布局中，浮动是一个常用的属性，但在子元素设置float属性时height超过父元素，在父元素未设置高度或高度小于子元素时，会出现子元素溢出父元素，从而使父元素高度出现塌陷的情况。而为了防止子元素溢出到父元素包围以外的css处理，就被称为清除浮动">
+<meta name="twitter:image" content="https://y695287173.github.io/img/css-float-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="不知不觉又一秋" type="application/atom+xml">
   
@@ -158,36 +161,132 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-float-clear" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      清除浮动的几种方法
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/27/float-clear/" class="archive-article-date">
+
+        
+        <a href="/2017/02/27/float-clear/" class="archive-article-date">
   	<time datetime="2017-02-27T14:42:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/27/float-clear/">清除浮动的几种方法</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在CSS布局中，浮动是一个常用的属性，但在子元素设置float属性时height超过父元素，在父元素未设置高度或高度小于子元素时，会出现子元素溢出父元素，从而使父元素高度出现塌陷的情况。而为了防止子元素溢出到父元素包围以外的css处理，就被称为<em>清除浮动</em><br><a id="more"></a></p>
+<h5 id="此处引用W3C中清除浮动的例子：http-www-w3school-com-cn-css-css-positioning-floating-asp"><a href="#此处引用W3C中清除浮动的例子：http-www-w3school-com-cn-css-css-positioning-floating-asp" class="headerlink" title="此处引用W3C中清除浮动的例子：http://www.w3school.com.cn/css/css_positioning_floating.asp"></a>此处引用W3C中清除浮动的例子：<a href="http://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank" rel="external">http://www.w3school.com.cn/css/css_positioning_floating.asp</a></h5><pre><code>.news {
+  background-color: gray;
+  border: solid 1px black;
+  }
 
-        <div class="article-info info-on-right">
-          
+.news img {
+  float: left;
+  }
+
+.news p {
+  float: right;
+  }
+
+&lt;div class=&quot;news&quot;&gt;
+&lt;img src=&quot;news-pic.jpg&quot; /&gt;
+&lt;p&gt;some text&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p><img src="/img/css-float-1.jpg" alt="timberland"><br><br></p>
+<h1 id="主要几种常用清除浮动的方法："><a href="#主要几种常用清除浮动的方法：" class="headerlink" title="主要几种常用清除浮动的方法："></a>主要几种常用清除浮动的方法：</h1><h4 id="方法1：使用css的-after伪元素进行清除浮动"><a href="#方法1：使用css的-after伪元素进行清除浮动" class="headerlink" title="方法1：使用css的:after伪元素进行清除浮动"></a>方法1：使用css的:after伪元素进行清除浮动</h4><pre><code>.news {
+  background-color: gray;
+  border: solid 1px black;
+  }
+.news img {
+  float: left;
+  }
+.news p {
+  float: right;
+  }
+.clearfix:after{
+  content: &quot;&quot;;
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;  
+  }
+.clearfix {
+  /* 触发 hasLayout */
+  zoom: 1;
+  }
+&lt;div class=&quot;news clearfix&quot;&gt;
+&lt;img src=&quot;news-pic.jpg&quot; /&gt;
+&lt;p&gt;some text&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p>此方法的原理为在要清除浮动的父元素最后添加一个带有clear：both属性，且不可见的元素，以此元素来清除浮动。与直接宰父元素最后添加一个带有clear：both的元素原理一直，但是使用：after属性不会因为添加一个无意义的元素而破坏html文档的结构。而zoom：1，是为了触发IE的hasLayout来清除浮动。</p>
+<h3 id="方法2：使用CSS的overflow属性"><a href="#方法2：使用CSS的overflow属性" class="headerlink" title="方法2：使用CSS的overflow属性"></a>方法2：使用CSS的overflow属性</h3><pre><code>overflow:auto;
+</code></pre><p>或</p>
+<pre><code>overflow：hidden；
+</code></pre><p>另外同理需要加上zoom：1的IE HACK来兼容IE</p>
+<pre><code>.news {
+  background-color: gray;
+  border: solid 1px black;
+  overflow: auto;
+  *zoom: 1;
+  }
+.news img {
+  float: left;
+  }
+.news p {
+  float: right;
+  }
+&lt;div class=&quot;news&quot;&gt;
+&lt;img src=&quot;news-pic.jpg&quot; /&gt;
+&lt;p&gt;some text&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p>此处需要解释一下，这种清除浮动的方式是和上面第一种方式有着不同的原理。第一种方式是利用了父元素内最后一个元素或伪元素具有的clear属性来进行清除浮动的，而此方法是触发了BFC来清除浮动的。即Block formatting contexts （块级格式化上下文），简称 BFC。</p>
+<p>BFC 是页面中独立的一个容器，容器内的子元素不会对外部产生影响。</p>
+<p>BFC具有如下特性：</p>
+<ol>
+<li>BFC会阻止内部子元素在垂直方向的外边距重叠（margin），但BFC之间和同一个BFC内的外边距重叠问题仍然存在。</li>
+<li>BFC可以包裹住浮动元素</li>
+<li>BFC不会重叠浮动元素</li>
+</ol>
+<p>因此利用BFC可以包裹浮动元素的特性来清除浮动</p>
+<h3 id="方法3：浮动元素的外部元素也设置为浮动元素"><a href="#方法3：浮动元素的外部元素也设置为浮动元素" class="headerlink" title="方法3：浮动元素的外部元素也设置为浮动元素"></a>方法3：浮动元素的外部元素也设置为浮动元素</h3><p>这种方法因为会影响布局，所以一般也使用不上。主要还是推荐上述两种方法。</p>
+<p>具体想深入了解清除浮动的方法和其中的原理，可以参考如下链接：</p>
+<p>那些年我们一起清除过的浮动：<a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">http://www.iyunlu.com/view/css-xhtml/55.html</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
@@ -199,133 +298,88 @@
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/16/font-order/" class="archive-article-date">
-  	<time datetime="2017-02-15T16:06:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/16/font-order/">font 属性简写</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">css</a>
-        </li>
       
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/14/javascriptnote11/" class="archive-article-date">
-  	<time datetime="2017-02-14T05:38:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/14/javascriptnote11/">《javaScript高级程序设计》第11章 DOM拓展总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">javaScript</a>
-        </li>
       
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/13/pointer/" class="archive-article-date">
-  	<time datetime="2017-02-13T14:36:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/13/pointer/">css下让input按钮指上变小手</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">css</a>
-        </li>
       
-		</ul>
-	</div>
-
-          
-
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://y695287173.github.io/2017/02/27/float-clear/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/02/16/font-order/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">font 属性简写</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -348,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

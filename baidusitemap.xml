@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>https://y695287173.github.io/2017/02/16/font-order/</loc>
-    <lastmod>2017-02-15T16:11:31.056Z</lastmod>
+    <loc>https://y695287173.github.io/2017/02/27/float-clear/</loc>
+    <lastmod>2017-02-27T15:49:39.666Z</lastmod>
     <data>
         <display>
-        <title>font 属性简写</title>
-        <pubTime>2017-02-15T16:06:07.000Z</pubTime>
+        <title>清除浮动的几种方法</title>
+        <pubTime>2017-02-27T14:42:39.000Z</pubTime>
         
         <tag>css</tag>
          
@@ -22,13 +22,30 @@
     
   <url>
     <loc>https://y695287173.github.io/2017/02/14/javascriptnote11/</loc>
-    <lastmod>2017-02-15T04:57:24.380Z</lastmod>
+    <lastmod>2017-02-20T05:27:49.929Z</lastmod>
     <data>
         <display>
         <title>《javaScript高级程序设计》第11章 DOM拓展总结</title>
         <pubTime>2017-02-14T05:38:04.000Z</pubTime>
         
         <tag>javaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://y695287173.github.io/2017/02/16/font-order/</loc>
+    <lastmod>2017-02-15T16:11:31.056Z</lastmod>
+    <data>
+        <display>
+        <title>font 属性简写</title>
+        <pubTime>2017-02-15T16:06:07.000Z</pubTime>
+        
+        <tag>css</tag>
          
          
            

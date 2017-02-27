@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="不知不觉又一秋">
 <meta property="og:description" content="摘录总结自《javaScript高级程序设计》
 对 DOM 的两个主要的扩展是 Selectors API（选择符 API）和 HTML5。这两个扩展都源自开发社区，而将某些常见做法及 API 标准化一直是众望所归。此外，还有一个不那么引人瞩目的 Element Traversal（元素遍历）规范，为 DOM 添加了一些属性。虽然前述两个主要规范（特别是 HTML5）已经涵盖了大量的 DOM 扩展">
-<meta property="og:updated_time" content="2017-02-15T04:57:24.380Z">
+<meta property="og:updated_time" content="2017-02-20T05:27:49.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《javaScript高级程序设计》第11章 DOM拓展总结">
 <meta name="twitter:description" content="摘录总结自《javaScript高级程序设计》
@@ -246,7 +246,7 @@
 <p>添加了自定义属性之后，可以通过元素的 dataset 属性来访问自定义属性的值。 dataset 属性的值是 DOMStringMap 的一个实例，也就是一个名值对儿的映射。在这个映射中，每个 data-name 形式的属性都会有一个对应的属性，只不过属性名没有 data- 前缀（比如，自定义属性是 data-myname ，那映射中对应的属性就是 myname ）。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//本例中使用的方法仅用于演示</span></div><div class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line"></div><div class="line"><span class="comment">//取得自定义属性的值</span></div><div class="line"><span class="keyword">var</span> appId = div.dataset.appId;</div><div class="line"><span class="keyword">var</span> myName = div.dataset.myname;</div><div class="line"></div><div class="line"><span class="comment">//设置值</span></div><div class="line">div.dataset.appId = <span class="number">23456</span>;</div><div class="line">div.dataset.myname = <span class="string">"Michael"</span>;</div><div class="line"></div><div class="line"><span class="comment">//有没有"myname"值呢？</span></div><div class="line"><span class="keyword">if</span> (div.dataset.myname)&#123;</div><div class="line">	alert(<span class="string">"Hello, "</span> + div.dataset.myname);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果需要给元素添加一些不可见的数据以便进行其他处理，那就要用到自定义数据属性。在跟踪链接或混搭应用中，通过自定义数据属性能方便地知道点击来自页面中的哪个部分。<br>在编写本书时，支持自定义数据属性的浏览器有 Firefox 6+和 Chrome。</p>
-
+<h4 id="11-3-6-插入标记"><a href="#11-3-6-插入标记" class="headerlink" title="11.3.6 插入标记"></a>11.3.6 插入标记</h4>
       
 
       
