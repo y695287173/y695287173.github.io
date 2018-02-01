@@ -26,6 +26,9 @@ public class Network
     Map<String,ArrayList<String>> mapPath = new HashMap<String,ArrayList<String>>();
     ArrayList<String> result ;
     Stack<String> nodeList;
+    int[] visit;
+    ArrayList<String> keyToNum;
+    
     
     public boolean readNetworkRelation(String inputFile)
     {
@@ -112,7 +115,7 @@ public class Network
         return true;
     }
     
-    //节点排序，先比较节点价值，相同比较节点总时延，仍相同按字符串顺序输出
+  //节点排序，先比较节点价值，相同比较节点总时延，仍相同按字符串顺序输出
     private class valueComparator implements Comparator<Map.Entry<String,ArrayList<Integer>>>    
     {    
         public int compare(Map.Entry<String,ArrayList<Integer>> item1, Map.Entry<String,ArrayList<Integer>> item2)     
@@ -136,7 +139,8 @@ public class Network
         	}
         }    
     }  
-    //使用valueComparator排序nodeValue，然后进行输出
+    
+  //使用valueComparator排序nodeValue，然后进行输出
     public String sortNetworkNodes()
     {
         List<Map.Entry<String,ArrayList<Integer>>> list=new ArrayList<Map.Entry<String,ArrayList<Integer>>>();  
@@ -153,76 +157,150 @@ public class Network
         return sb.toString();
     }
     
-    //递归深度优先遍历
-    private void fintPath(String start, String end)  
-    {
-    	nodeList.push(start);
-    	ArrayList<String> children = mapPath.get(start);
-    	
-    	if(children == null){
-    		nodeList.pop();  
-    		return;
-    	}
-    	
-    	//如果找寻到目标节点，将栈中存放的数据按压入顺序取出，输出路径到result
-    	for(int i=0;i<children.size();i++){
-    		if(end.equals(children.get(i))){
-    			StringBuilder sb = new StringBuilder();
-    			for(int j=0;j<nodeList.size();j++){
-    				sb.append(nodeList.get(j)+",");
-    			}
-    			sb.append(end);
-    			result.add(sb.toString());
-    			nodeList.pop(); 
-    			return;
-    		}
-    	}
-    	
-    	//递归查找子节点,避免形成环
-    	for(int i = 0; i < children.size(); i++)  
-        {  
-    		if(!nodeList.contains(children.get(i)))
-    			fintPath(children.get(i), end);  
-        } 
-    	
-    	//遍历完成节点被pop出nodeList
-        nodeList.pop();  
-    }
     
     public String getShortestPath(String start,String end)
     {
-    	//搜索路径时，用于存储经过节点
-    	nodeList = new Stack<String>();
-    	result = new ArrayList<String>();
-    	
-    	if(start.equals(end)) return "NoPath";
-    	
-    	fintPath(start,end);
-
-    	Collections.sort(result,new Comparator<String>() {
-
-			@Override
-			public int compare(String s1, String s2) {
-				// TODO Auto-generated method stub
-				return s1.length()-s2.length();
-			}
-		}); 
-    	
-    	//输出result中最短路径到字符串
-    	StringBuilder sb = new StringBuilder();
-    	for(String s : result){
-    		if(s.length() == result.get(0).length())
-    			sb.append(s+";");
-    		else
-    			break;
-    	}
-    	//去掉末尾分号
-    	if(sb.length()!=0)
-    		sb.deleteCharAt(sb.length()-1);
-    	else
+    	if(start == null || start.length()==0 || end == null || end.length()==0 || start.compareTo(end) == 0 )
     		return "NoPath";
     	
-		return sb.toString();
+    	//初始化keyToNum
+    	Set<String> keys = nodeValue.keySet();
+    	int n = keys.size();
+    	ArrayList<String> keyToNum = new ArrayList<String>();
+    	int path[][] = new int[n][n];
+    	int pre[][] = new int[n][n];
+    	ArrayList<String> list;
+    	
+    	keyToNum.add(start);
+    	for(String key : keys){
+    		if(key.equals(start)!=true)
+    			keyToNum.add(key);
+    	}
+    	
+    	//初始化path
+    	for(int i=0;i<n;i++){
+    		for(int j=0;j<n;j++){
+    			path[i][j]=Integer.MAX_VALUE;
+    		}
+    	}
+    	
+    	for(String key : keys){
+    		list = mapPath.get(key);
+    		if(list == null) continue;
+    		for(String s : list){
+    			path[keyToNum.indexOf(key)][keyToNum.indexOf(s)] = 1;
+    		}
+    	}
+    	
+    	//初始化pre和minLen
+    	for(int i=0;i<n;i++){
+    		for(int j=0;j<n;j++){
+    			pre[i][j]=-1;
+    		}
+    	}
+    	
+    	int minLen[]=new int[n];
+    	int visit[]=new int[n];
+    	
+    	for(int i=0;i<n;i++){
+    		minLen[i]=path[0][i];
+    		if(path[0][i] == 1){
+    			pre[i][0]=0;
+    		}
+    			
+    	}
+    	
+    	visit[0] = 1;
+    	minLen[0]=0;
+    	
+    	for(int i=1;i<n;i++){
+    		int min=Integer.MAX_VALUE;
+    		int minj=0;
+    		for(int j=0;j<n;j++){
+    			if(visit[j]==0 && minLen[j]<min){
+    				min=minLen[j];
+    				minj=j;
+    			}
+    		}
+    		visit[minj]=1;
+    		for(int j=1;j<n;j++){
+    			if(visit[j]==0 && (min+path[minj][j])< minLen[j] && minLen[minj]!=Integer.MAX_VALUE&&path[minj][j]!=
+    				Integer.MAX_VALUE){
+    				minLen[j] = min+path[minj][j];
+    				pre[j][0] = minj;
+    				System.out.println("pre: "+j+","+"0"+": "+pre[j][0]);
+    			}else if(visit[j]==0 && (min+path[minj][j])== minLen[j] && minLen[minj]!=Integer.MAX_VALUE&&path[minj][j]!=
+    				Integer.MAX_VALUE){
+    				int l =0;
+    				while(pre[j][l]!=-1) l++;
+    				pre[j][l] = minj;
+    				System.out.println("pre: "+j+","+l+": "+pre[j][l]);
+    			}
+    		}	
+    	}
+    	
+    	//转化成路径
+    	ArrayList<ArrayList<Integer>> arrRes = new ArrayList<ArrayList<Integer>>();
+    	ArrayList<ArrayList<Integer>> arrTotal;
+    	
+    	int p = keyToNum.indexOf(end);
+    	int l = 0;
+    	if (pre[p][0] == -1)
+    		return "NoPath";
+    	else{
+    		while(pre[p][l] != -1)
+    		{
+    			ArrayList<Integer> arrStr = new ArrayList<Integer>();
+    			arrStr.add(p);
+    			arrStr.add(pre[p][l]);
+    			arrRes.add(arrStr);
+    			l++;
+    		}
+    	}
+    	
+    	boolean isend =false;
+
+    	while(!isend){
+    		arrTotal = (ArrayList<ArrayList<Integer>>) arrRes.clone();
+    		isend =true;
+    		for (ArrayList<Integer> arr : arrTotal){
+    			int tem = arr.get(arr.size()-1);
+    			l = 0;
+    			while(pre[tem][l]!=-1){
+    				if (isend ==true){
+    					isend =false;
+    				}
+    				if(l==0){
+    					arr.add(pre[tem][l]);
+    				}else{
+    					ArrayList<Integer> arrTem = new ArrayList<Integer>();
+    					for(int i=0;i<arr.size()-1;i++){
+    						arrTem.add(arr.get(i));
+    					}
+    					arrTem.add(pre[tem][l]);
+    					arrRes.add(arrTem);
+    				}
+    				l++;
+    			}
+    		}
+    	}
+
+    	//输入结果到result
+    	StringBuilder result = new StringBuilder();
+    	for(ArrayList<Integer> arr : arrRes){
+    		for(int i=arr.size()-1;i>=0;i--){
+    			result.append(keyToNum.get(arr.get(i))+","); 
+    		}
+    		result.deleteCharAt(result.length()-1);
+    		result.append(";");
+    	}
+    	if(result.length()==0)
+    		return "NoPath";
+    	else
+    		result.deleteCharAt(result.length()-1);
+    	
+    	System.out.println(result.toString());
+        return result.toString();
     }
     
 }
